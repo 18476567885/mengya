@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //页面加载
+        window.onload=init;//直接写的这个函数不要加括号
+        //初始化函数
+        function init(){
+            //获取下拉菜单
+            var munu=document.getElementById('munu');
+            //给菜单绑定change事件，一般作用于select或者是checkbox(复选框)或者是radio(单选按钮)
+             munu.onchange=function(){
+                //获取当前选定的值
+               var bgcolor=this.value;
+                var bgcolor=munu.options[munu.selectedIndex].value;
+                 /* if(bgcolor=="")return;
+                  //设置body的背景颜色
+                  document.body.style.background=bgcolor;*/
+                  if(bgcolor==""){
+                      document.body.style.background='#fff';
+                  }else{
+                      document.body.style.background=bgcolor;
+                  }
+             }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        请选择您喜欢的颜色：
+        <select name="" id="munu">
+            <option value="#fff">请选择</option>
+            <option value="#f00">红色</option>
+            <option value="#ff0">黄色</option>
+            <option value="#0f0">绿色</option>
+            <option value="#00f">蓝色</option>
+        </select>
+    </div>
+</body>
+</html>
